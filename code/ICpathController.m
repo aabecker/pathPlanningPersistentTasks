@@ -35,7 +35,7 @@ phi(1:5,1:5) = 1;  %these are interesting!
 pcolor(mX,mY,phi)
 colormap([1,1,1;0,1,0])
 hold on
-cellsz = mY(2) - mY(1);
+cellsz = mY(2) - mY(1); % the length of a grid cell
 
 
 
@@ -72,7 +72,7 @@ end
             % do a for loop over every entry in phi and assign this value to the mass of the correct waypoint.
             indExctiting = find(phi>0); %index of every 'exciting point'
             for m = 1:numel(indExctiting)  % iterate through every grid point that is 'exciting'
-                indx = indExctiting(m)
+                indx = indExctiting(m);
                 pos = [mX(indx)+cellsz/2,mY(indx)+cellsz/2];  %center of grid cell is [mX,mY] + 1/2[cellsize,cellsize]
                 %squared distance between this grid cell and every waypoint
                 
